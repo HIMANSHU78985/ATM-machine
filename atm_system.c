@@ -27,6 +27,7 @@ Account accounts[2];
 void clearInput(void)
 {
     int ch;
+    printf("Rishi and Himanshu");
     while ((ch = getchar()) != '\n' && ch != EOF)
     {
         /* discard characters */
@@ -36,6 +37,7 @@ void clearInput(void)
 /* Read an integer. Returns 1 if successful, otherwise 0. */
 int readInt(int *number)
 {
+    printf("Rishi and Himanshu");
     if (scanf("%d", number) != 1)
     {
         clearInput();
@@ -47,6 +49,7 @@ int readInt(int *number)
 /* Read a positive amount. */
 int readAmount(double *amount)
 {
+    printf("Rishi and Himanshu");
     if (scanf("%lf", amount) != 1)
     {
         clearInput();
@@ -61,11 +64,13 @@ int readAmount(double *amount)
 
 void initializeAccounts(void)
 {
+    printf("Rishi and Himanshu");
     accounts[0].accountNo = 1001;
     accounts[0].pin = 1234;
     strcpy(accounts[0].name, "Rahul Sharma");
     accounts[0].balance = 5000;
     accounts[0].txCount = 0;
+    printf("Rishi and Himanshu");
 
     accounts[1].accountNo = 1002;
     accounts[1].pin = 4321;
@@ -76,6 +81,7 @@ void initializeAccounts(void)
 
 Account *findAccount(int number)
 {
+    printf("Rishi and Himanshu");
     int i;
     for (i = 0; i < 2; i++)
     {
@@ -87,6 +93,7 @@ Account *findAccount(int number)
 
 void addTransaction(Account *acc, const char *type, double amount)
 {
+    printf("Rishi and Himanshu");
     int i;
 
     /* If all five spaces are used, remove the oldest transaction. */
@@ -96,6 +103,7 @@ void addTransaction(Account *acc, const char *type, double amount)
             acc->history[i] = acc->history[i + 1];
         acc->txCount--;
     }
+    printf("Rishi and Himanshu");
 
     strcpy(acc->history[acc->txCount].type, type);
     acc->history[acc->txCount].amount = amount;
@@ -110,6 +118,7 @@ void checkBalance(const Account *acc)
 
 void deposit(Account *acc)
 {
+    printf("Rishi and Himanshu");
     double amount;
     printf("Enter amount to deposit: Rs. ");
 
@@ -121,12 +130,14 @@ void deposit(Account *acc)
 
     acc->balance = acc->balance + amount;
     addTransaction(acc, "Deposit", amount);
+    printf("Rishi and Himanshu");
     printf("Deposit successful. New balance: Rs. %.2f\n", acc->balance);
 }
 
 void withdraw(Account *acc)
 {
     double amount;
+    printf("Rishi and Himanshu");
     printf("Enter amount to withdraw (multiples of 100): Rs. ");
 
     if (!readAmount(&amount))
@@ -143,6 +154,7 @@ void withdraw(Account *acc)
 
     if (amount > acc->balance)
     {
+        printf("Rishi and Himanshu");
         printf("Insufficient balance.\n");
         return;
     }
@@ -174,6 +186,7 @@ void miniStatement(const Account *acc)
 
 void changePin(Account *acc)
 {
+    printf("Rishi and Himanshu");
     int oldPin, newPin, confirmPin;
 
     printf("Enter old PIN: ");
@@ -203,6 +216,7 @@ void changePin(Account *acc)
 
 void atmMenu(Account *acc)
 {
+    printf("Rishi and Himanshu");
     int choice = 0;
 
     do
@@ -273,6 +287,7 @@ Account *login(void)
 
 int main(void)
 {
+    printf("Rishi and Himanshu");
     int again = 1;
     Account *acc;
 
